@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Orders</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+      integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/static/css/tracker.css" />
+  </head>
+  <body>
+    <header>
+      <div class="custom-container">
+        <div class="l-heading">
+          <h1><a href="/">PROTOMIX</a></h1>
+        </div>
+        <div class="order-lead">
+          <h3>Order name: {{tracker.product.name}}</h3>
+          <h3>Current package : {{status}}</h3>
+        </div>
+        <div class="tracker-lead">
+          <!-- imported markup -->
+          <div class="container px-1 px-md-4 py-5 mx-auto">
+            <div class="card">
+              <div class="row d-flex justify-content-between px-3 top">
+                <div class="d-flex">
+                  <h5>ORDER <span class="text-primary font-weight-bold">{{tracker.product.name}}</span></h5>
+                </div>
+                <div class="d-flex flex-column text-sm-right">
+                  <p class="mb-0">Expected Arrival <span></span></p>
+                  <p>USPS <span class="font-weight-bold">{{tracker.tracker_id}}</span></p>
+                </div>
+              </div>
+              <!-- Add class 'active' to progress -->
+              <div class="row d-flex justify-content-center">
+                <div class="col-12">
+                  <ul id="progressbar" class="text-center">
+                    <li class="{{pre1}} step0"></li>
+                    <li class="{{pre2}} step0"></li>
+                    <li class="{{pre3}} step0"></li>
+                    <li class="{{pre4}} step0"></li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row justify-content-between top">
+                <div class="row d-flex icon-content">
+                  <img class="icon" src="https://i.imgur.com/9nnc9Et.png" />
+                  <div class="d-flex flex-column">
+                    <p class="font-weight-bold">Order<br />Processed</p>
+                  </div>
+                </div>
+                <div class="row d-flex icon-content">
+                  <img class="icon" src="https://i.imgur.com/u1AzR7w.png" />
+                  <div class="d-flex flex-column">
+                    <p class="font-weight-bold">Order<br />Shipped</p>
+                  </div>
+                </div>
+                <div class="row d-flex icon-content">
+                  <img class="icon" src="https://i.imgur.com/TkPm63y.png" />
+                  <div class="d-flex flex-column">
+                    <p class="font-weight-bold">Order<br />En Route</p>
+                  </div>
+                </div>
+                <div class="row d-flex icon-content">
+                  <img class="icon" src="https://i.imgur.com/HdsziHP.png" />
+                  <div class="d-flex flex-column">
+                    <p class="font-weight-bold">Order<br />Arrived</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- end -->
+        </div>
+      </div>
+    </header>
+  </body>
+</html>

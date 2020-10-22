@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Orders
+{% endblock title %}
+
+<!-- custom nav start -->
+{% block body %}
+
+<header>
+  <div class="custom-container head-wrapper">
+    <div class="l-heading">
+      <h1>Your {{pagename}}</h1>
+    </div>
+
+  </div>
+  </div>
+</header>
+<!-- orders history section -->
+<section id="orders-history">
+  <div class="custom-container">
+    {% for order in orders %}
+    <div class="order-card">
+      {% if pagename == 'Orders' %}
+      <div class="order-card-header">
+        <div class="header-part-1 mg-x-1">
+          <h4>Order placed</h4>
+          <h4>{{order.date}}</h4>
+        </div>
+        <div class="header-part-2 mg-x-1">
+          <h4>TOTAL</h4>
+          <h4>&#x20B9;{{order.product.price}}</h4>
+        </div>
+        <div class="header-part-3 mg-x-1">
+          <h4>SHIP TO</h4>
+          <h5>{{customer.name}}</h5>
+        </div>
+      </div>
+      {% endif %}
+
+      <div class="order-card-tail">
+        <div class="order-description">
+          {% if pagename == 'Orders' %}
+          <h4>Not Yet Delivered</h4>
+          {% endif %}
+          <div class="product-description">
+            <img src="{{order.product.image_url}}" alt="" />
+            <p>
+              {{order.product.desc}}
+            </p>
+          </div>
+        </div>
+        
+          {% if pagename == 'Orders' %}
+          <div class="tracker-button">
+          <a class="btn btn-primary" href="/tracker/{{order.product.product_id}}">Track Package</a>
+          </div>
+          {%else%}
+          <form action="/placeOrder" method="get">
+            <input type="hidden" name="product_id" value="{{order.product.product_id}}">
+            <button type="submit" class="btn btn-primary">Order</button>
+          </form>
+          {% endif %}
+       
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+{% endblock body %}

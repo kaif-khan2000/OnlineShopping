@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{% block title %}
+    {% endblock title %}</title>
+
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+      integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+    <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+      integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+      integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="/static/css/catalog.css" />
+    <link rel="stylesheet" href="/static/css/orders.css" />
+  
+    </head>
+  <body>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v8.0" nonce="q23joy3I"></script>
+    <nav id="custom-nav-bar">
+      <div class="custom-nav-container">
+        <div class="custom-logo">
+          <a class="navbar-brand custom-primary-hover" href="/">PROTOMIX<a>
+        </div>
+        <div class="custom-search-bar">
+          <form action="/searchView" method="GET">
+            <input
+              name="search"
+              type="custom-text"
+              
+              list="suggestions"
+              id="searchbar"
+              placeholder="Search Products, brands and more"
+              class="custom-search-box searchbar"
+            />
+            <datalist id="suggestions">
+
+            </datalist>
+            <button type="submit" class="custom-btn custom-btn-primary"><i class="fas fa-search fa-1x"></i></button>
+          </form>
+        </div>
+        <div id="custom-nav-items">
+          <ul>
+            {% if user.is_authenticated %}
+              
+            <div class="custom-nav-item">
+                <a href="" >Welcome {{user.username}}</a>
+            </div>
+            <div class="custom-nav-item">
+              <a href="/orderPage" class="custom-primary-hover">Orders</a>
+            </div>
+            <div class="nav-item">
+              <a href="/cartPage" class="custom-primary-hover">Cart</a>
+            </div>
+            <div class="nav-item">
+                <a href="javascript:logout();" class="custom-primary-hover">Logout</a>
+            </div>
+            {% else %}
+            <div class="nav-item">
+              <a href="" class="custom-primary-hover" data-toggle="modal" data-target="#exampleModalCenter">Sign in</a>
+              <div
+                class="modal fade"
+                id="exampleModalCenter"
+                tabindex="-1"
+                role="dialog"
+                aria-labelledby="exampleModalCenterTitle"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLongTitle">Sign in form</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-danger" style="text-align: center;" id="message"></div>
+                        <div class="custom-form">
+                          <div class="custom-form-group">
+                            <label>Email*</label>
+                            <input id="loginEmail" type="email" name="email" placeholder="Enter email id" />
+                          </div>
+                          <div class="custom-form-group">
+                            <label>Password*</label>
+                            <input id="loginPassword" type="password" name="password" placeholder="Enter password" />
+                          </div>
+                        </div>
+                      
+                      <p>Dont have an account?<a href="/signUp" style="color:blue">signup here</a></p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      <button type="button" class="btn btn-primary" onclick="signIn()">Sign in</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endif %}
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% block body %}
+
+    {% endblock body %}
+     <footer>
+      <h4>All Copy rights reserverd &copy; 2020</h4>
+    </footer>
+    <script src="/static/js/base.js"></script>
+    {% block js %}
+    
+    {% endblock js %}
+  </body>
+</html>

@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block title %}
+search-{{query}}
+{% endblock title %}
+
+
+{% block body %}
+    <div class="container w-50" style="min-height: 600px;">
+        <h3>Search result for "{{query}}" in {{time}}</h3>
+        {% if not products %}
+          <h2> Not found </h2>
+        {% endif %}
+        {% for product in products %}
+        <a href="/productView/{{product.product_id}}" class="card mb-3 text-dark" style="max-width: 640px;display:block">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img  src="{{product.image_url}}" class="card-img" alt="...">
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{product.name}}</h5>
+                  <p class="card-text">{{product.desc|truncatechars:100|safe}}</p>
+                  <p class="card-text"><p class="text-primary">&#x20B9;{{product.price}}</p></p>
+                </div>
+              </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+{% endblock body %}

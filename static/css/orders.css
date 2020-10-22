@@ -1,0 +1,241 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h4 {
+  font-size: 0.9rem;
+}
+
+button {
+}
+
+.custom-container {
+  max-width: 1100px;
+  margin: auto;
+  overflow: hidden;
+
+  padding: 0 1rem;
+}
+
+.head-wrapper {
+  display: flex;
+  margin-top: 7rem;
+  margin-bottom: 3rem;
+  padding-bottom: 2rem;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  align-items: center;
+}
+
+.custom-form-wrapper {
+  width: 60%;
+}
+
+.custom-form-wrapper input {
+  width: 65%;
+  padding: 0.5rem 0.2rem;
+  font-size: 1.1rem;
+}
+
+.custom-form-wrapper button {
+  width: 30%;
+  padding: 0.55rem 0;
+  font-size: 1rem;
+}
+
+.mg-x-1 {
+  margin-right: 3rem;
+}
+
+/* order section styles */
+
+#orders-history .order-card {
+  display: flex;
+  flex-direction: column;
+  color: #555;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-bottom: 1rem;
+}
+
+#orders-history .order-card .order-card-header {
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: left;
+  padding: 1rem 2rem;
+}
+
+#orders-history .order-card .order-card-header .header-part-1,
+#orders-history .order-card .order-card-header .header-part-2,
+#orders-history .order-card .order-card-header .header-part-3 {
+}
+
+#orders-history .order-card .order-card-header h4 {
+  margin-bottom: 0.4rem;
+}
+
+#orders-history .order-card .order-card-tail {
+  display: flex;
+  padding: 1rem 2rem;
+}
+
+#orders-history .order-card .order-card-tail .order-description {
+  flex: 4;
+}
+
+#orders-history .order-card .order-card-tail .order-description .product-description {
+  display: flex;
+}
+
+#orders-history .order-card .order-card-tail .order-description .product-description img {
+  height: 100%;
+  width: 30%;
+  margin-right: 10px;
+}
+
+#orders-history .order-card .order-card-tail .order-description h4 {
+  margin-bottom: 1rem;
+}
+
+#orders-history .order-card .order-card-tail .tracker-button {
+  flex: 2;
+  align-self: center;
+  justify-self: center;
+  margin-left: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#orders-history .order-card .order-card-tail .tracker-button button {
+  width: 60%;
+  padding: 0.5rem 0;
+  text-align: center;
+}
+
+button:hover {
+  background-color: #d7d7d7;
+}
+
+/* nav bar styles */
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+  border: none;
+}
+
+.custom-btn {
+  border: none;
+  padding: 0.5rem 1rem;
+  color: #2874f0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.custom-btn-primary {
+  background-color: #fff;
+}
+
+.custom-primary-hover:hover {
+  background-color: #528ff3;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+#custom-nav-bar {
+  background-color: #2874f0;
+  /* background-color: #333; */
+  height: 4rem;
+}
+
+.custom-logo {
+  color: #fff;
+}
+
+#custom-nav-bar .custom-nav-container {
+  margin: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+}
+
+#custom-nav-bar .custom-nav-container ul {
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+
+#custom-nav-bar .custom-nav-container ul a {
+  padding: 1rem 1rem;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+}
+
+#custom-nav-bar input {
+  width: 450px;
+  padding: 0.5rem 0.5rem;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border: none;
+  font-size: 1.2rem;
+}
+
+#custom-nav-bar input:focus {
+  outline-width: 0;
+}
+
+#custom-nav-bar form {
+  display: flex;
+}
+
+/* navbar sign in modal styles */
+#custom-nav-bar .modal input {
+  border: 1px solid black;
+  margin-bottom: 1rem;
+  border-radius: 3px;
+}
+
+#custom-nav-bar .modal label {
+  margin-bottom: 1px;
+}
+
+#custom-nav-bar .modal .modal-body p {
+  color: #333;
+}
+
+#custom-nav-bar .modal .modal-body a {
+  text-decoration: none;
+  color: #333;
+  padding: 0 0.2rem;
+}
+
+footer {
+  text-align: center;
+  background-color: #ccc;
+  padding: 1rem 0;
+}
+
+.foot-wrapper {
+}
